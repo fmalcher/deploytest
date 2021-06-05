@@ -4,4 +4,4 @@ Toller Test!
 
 <hr>
 
-<small><?php echo date('d.m.Y') ?></small>
+<small><?php echo date('d.m.Y, H:i:s') ?></small>
