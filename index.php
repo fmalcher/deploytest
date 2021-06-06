@@ -9,7 +9,8 @@ Neuer Test am Sonntag. Abends. Nach 20 Uhr!
 <br>
 Hier noch eine Zeile um einen Push zu rechtfertigen.
 <br>
-Und hier noch eine...
+Und hier noch eine.....
+
 <hr>
 
 <small><?php echo date('d.m.Y, H:i:s') ?></small>
