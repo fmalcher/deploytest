@@ -9,5 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' OR !$deploytoken OR !$senttoken) {
   die();
 }
 
+if ($deploytoken !== $senttoken) {
+  die();
+}
+
 echo shell_exec('/usr/bin/git pull 2>&1');
 ?>
