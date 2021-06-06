@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' OR !$deploytoken OR !$senttoken) {
   die();
 }
 
-if ($deploytoken !== $senttoken) {
+if ($senttoken !== $deploytoken) {
   die();
 }
 
