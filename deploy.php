@@ -1,15 +1,13 @@
 <?php
+// set with Apache setting in vhost file or .htaccess:
+// SetEnv HTTP_DEPLOY_TOKEN "mytoken" 
 
-// In FinalVersion als Umgebungsvariable oder File
-$secret = '123';
+$deploytoken = getenv('HTTP_DEPLOY_TOKEN');
+$senttoken = $_GET['token'];
 
-$token = $_POST['token'];
-$isValid = strcmp($secret, $token);
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if ($isValid) {
-        echo shell_exec('/usr/bin/git pull 2>&1');
-    }    
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' OR !$deploytoken OR !$senttoken) {
+  die();
 }
 
+echo shell_exec('/usr/bin/git pull 2>&1');
 ?>
