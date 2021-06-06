@@ -7,12 +7,9 @@ $token = $_POST['token'];
 $isValid = strcmp($secret, $token);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($isValid) {
+        echo shell_exec('/usr/bin/git pull 2>&1');
+    }    
 }
-
-if (!$isValid) {
-    die();
-}
-
-echo shell_exec('/usr/bin/git pull 2>&1');
 
 ?>
